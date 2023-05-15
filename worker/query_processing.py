@@ -9,7 +9,7 @@ config = dotenv_values(".env")
 config['MONGO_CONNECT_STRING']
 uri = "mongodb+srv://<username>:<password>@cluster0.j3qun1f.mongodb.net/?retryWrites=true&w=majority"
 
-client = motor.motor_asyncio.AsyncIOMotorClient("mongodb://localhost:27017")
+client = motor.motor_asyncio.AsyncIOMotorClient(config['MONGO_CONNECT_STRING'])
 db = client.ccdc
 
 

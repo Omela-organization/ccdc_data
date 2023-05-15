@@ -8,10 +8,12 @@ from worker.fetch_ccdc import getArrayOfData,TypeFetch
 from bson import ObjectId
 import motor.motor_asyncio
 import numpy as np
+from dotenv import dotenv_values
 
+config = dotenv_values(".env") 
 
 app = FastAPI()
-client = motor.motor_asyncio.AsyncIOMotorClient('mongodb://localhost:27017')
+client = motor.motor_asyncio.AsyncIOMotorClient(config['MONGO_CONNECT_STRING'])
 db = client.ccdc
 
 MAX_THREAD=30
