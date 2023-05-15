@@ -32,7 +32,8 @@ requires = ["pdm-pep517>=1.0"]
 build-backend = "pdm.pep517.api"
 
 [tool.pdm.scripts]
-api = "uvicorn app:app --reload"
+api = "uvicorn app:app"
+api-dev = "uvicorn app:app --reload"
 worker = "worker.py"
 worker2 = "worker/query_processing.py"
 start = "index.py"
