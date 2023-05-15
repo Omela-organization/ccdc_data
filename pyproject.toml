@@ -1,0 +1,38 @@
+[project]
+name = "CCDC-data"
+version = "0.1.0"
+description = "Get data from ccdc"
+authors = [
+    {name = "ilau020203", email = "antip19052016@gmail.com"},
+]
+dependencies = [
+    "aiohttp>=3.8.4",
+    "requests>=2.28.2",
+    "strenum>=0.4.10",
+    "pymongo>=4.3.3",
+    "asyncio>=3.4.3",
+    "motor>=3.1.2",
+    "fastapi>=0.95.1",
+    "pydantic[email]>=1.10.7",
+    "uvicorn>=0.21.1",
+    "numpy>=1.24.3",
+    "python-crontab>=2.7.1",
+    "schedule>=1.2.0",
+    "python-dotenv>=1.0.0",
+]
+requires-python = ">=3.9"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+
+[build-system]
+requires = ["pdm-pep517>=1.0"]
+build-backend = "pdm.pep517.api"
+
+[tool.pdm.scripts]
+api = "uvicorn app:app --reload"
+worker = "worker.py"
+worker2 = "worker/query_processing.py"
+start = "index.py"
