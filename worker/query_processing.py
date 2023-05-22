@@ -1,9 +1,11 @@
 import motor.motor_asyncio
 from datetime import datetime
+import time
 
 from worker.fetch_ccdc import getArrayOfData, TypeFetch
 from fastapi.encoders import jsonable_encoder
 from dotenv import dotenv_values
+import random
 
 config = dotenv_values(".env") 
 config['MONGO_CONNECT_STRING']
@@ -26,5 +28,8 @@ async def processQuery():
         deleted = await db["query"].find_one_and_delete({"_id": document["_id"]})
         print(saved_query.inserted_ids)
         print(deleted)
+        time.sleep(random.randint(2, 9))
+
+
 
     # print(some)
