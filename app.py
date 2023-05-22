@@ -16,7 +16,7 @@ app = FastAPI()
 client = motor.motor_asyncio.AsyncIOMotorClient(config['MONGO_CONNECT_STRING'])
 db = client.ccdc
 
-MAX_THREAD=30
+MAX_THREAD=15
 
 class PyObjectId(ObjectId):
     @classmethod

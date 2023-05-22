@@ -104,11 +104,11 @@ async def getData(x: float, y: float, authToken: str, session, typeFetch: TypeFe
 
 
 async def getArrayOfData(array, typeFetch: TypeFetch):
-    authToken = getAuth()
 
     async with aiohttp.ClientSession() as session:
         tasks = []
         for i in range(len(array)):
+            authToken = getAuth()
             tasks.append(
                 asyncio.ensure_future(
                     getData(array[i][0], array[i][1], authToken, session, typeFetch)

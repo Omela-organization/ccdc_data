@@ -25,7 +25,9 @@ async def main():
     try:
         await processQuery()
     except Exception as e:
+        print('_____')
         print(e)
+        print('_____')
         myMutex = False
     myMutex = False
 

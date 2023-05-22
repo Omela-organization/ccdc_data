@@ -18,7 +18,7 @@ async def processQuery():
     now = datetime.now()
 
     print("now =", now)
-    cursor = db["query"].find().sort("createdAt", -1)
+    cursor = db["query"].find().sort("createdAt", 1)
     for document in await cursor.to_list(length=1):
         print(document["_id"])
         data = await getArrayOfData(document["points"], document["type"])
