@@ -12,6 +12,19 @@ from typesBody.NPV import  getBodyNPV
 from typesBody.SWIR1 import getBodySWIR1
 from typesBody.Wetness import  getBodyWetness
 from typesBody.Greenness import  getBodyGreenness
+from typesBody.Blue import  getBodyBlue
+from typesBody.EVI import  getBodyEVI
+from typesBody.EVI2 import  getBodyEVI2
+from typesBody.Green import  getBodyGreen
+from typesBody.GV import  getBodyGV
+from typesBody.NBR import  getBodyNBR
+from typesBody.NDFI import getBodyNDFI
+from typesBody.NIR import getBodyNIR
+from typesBody.Red import getBodyRED
+from typesBody.Shade import getBodyShade
+from typesBody.Soil import  getBodySoil
+from typesBody.SWIR2 import  getBodySWIR2
+
 
 
 class TypeFetch(StrEnum):
@@ -21,6 +34,18 @@ class TypeFetch(StrEnum):
     NDVI = auto()
     NPV = auto()
     SWIR1 = auto()
+    Blue = auto()
+    Green = auto()
+    Red = auto()
+    NIR = auto()
+    SWIR2 = auto()
+    NBR = auto()
+    EVI = auto()
+    EVI2 = auto()
+    NDFI = auto()
+    GV = auto()
+    Shade = auto()
+    Soil = auto()
 
 
 def getAuth() -> str:
@@ -92,8 +117,32 @@ async def getData(x: float, y: float, authToken: str, session, typeFetch: TypeFe
         body = getBodySWIR1(x, y)
     elif typeFetch == TypeFetch.Wetness:
         body = getBodyWetness(x, y)
+    elif typeFetch == TypeFetch.Blue:
+        body = getBodyBlue(x, y)
+    elif typeFetch == TypeFetch.EVI:
+        body = getBodyEVI(x, y)
+    elif typeFetch == TypeFetch.EVI2:
+        body = getBodyEVI2(x, y)
+    elif typeFetch == TypeFetch.Green:
+        body = getBodyGreen(x, y)
+    elif typeFetch == TypeFetch.GV:
+        body = getBodyGV(x, y)
+    elif typeFetch == TypeFetch.NBR:
+        body = getBodyNBR(x, y)
+    elif typeFetch == TypeFetch.NDFI:
+        body = getBodyNDFI(x, y)
+    elif typeFetch == TypeFetch.NIR:
+        body = getBodyNIR(x, y)
+    elif typeFetch == TypeFetch.Red:
+        body = getBodyRED(x, y)
+    elif typeFetch == TypeFetch.Shade:
+        body = getBodyShade(x, y)
+    elif typeFetch == TypeFetch.Soil:
+        body = getBodySoil(x, y)
+    elif typeFetch == TypeFetch.SWIR2:
+        body = getBodySWIR2(x, y)
     else:
-        raise Exception("asdf")
+        raise Exception("Bad type")
 
     headers = {"authorization": "Bearer " + authToken}
 

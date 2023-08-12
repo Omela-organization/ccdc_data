@@ -4,3 +4,15 @@ from .NDVI import getBodyNDVI
 from .NPV import getBodyNPV
 from .SWIR1 import getBodySWIR1
 from .Wetness import getBodyWetness
+from .Blue import getBodyBlue
+from .EVI import getBodyEVI
+from .EVI2 import getBodyEVI2
+from .Green import getBodyGreen
+from .GV import getBodyGV
+from .NBR import getBodyNBR
+from .NDFI import getBodyNDFI
+from .NIR import getBodyNIR
+from .Red import getBodyRED
+from .Shade import getBodyShade
+from .Soil import getBodySoil
+from .SWIR2 import getBodySWIR2

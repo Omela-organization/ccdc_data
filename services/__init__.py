@@ -1,0 +1,1 @@
+from .addAllTypes import add_all_types
