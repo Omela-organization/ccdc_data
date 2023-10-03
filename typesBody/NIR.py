@@ -3391,3 +3391,4 @@ def getBodyNIR(x, y):
     }}
   }}
 }}"""
+    return body 

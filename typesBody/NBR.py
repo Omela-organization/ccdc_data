@@ -3398,3 +3398,4 @@ def getBodyNBR(x, y):
     }}
   }}
 }}"""
+    return body 

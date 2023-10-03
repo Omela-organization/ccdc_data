@@ -59,7 +59,7 @@ class QueryModel(BaseModel):
 
 
 async def add_all_types(decart_mul):
-    types = list(TypeFetch)
+    types = list(TypeFetch)[6::]
     for type in types:
         result = []
         save_data = []

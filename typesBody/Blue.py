@@ -3391,3 +3391,4 @@ def getBodyBlue(x, y):
     }}
   }}
 }}"""
+    return body 

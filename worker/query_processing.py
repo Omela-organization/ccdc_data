@@ -28,7 +28,6 @@ async def processQuery():
         deleted = await db["query"].find_one_and_delete({"_id": document["_id"]})
         print(saved_query.inserted_ids)
         print(deleted)
-        time.sleep(random.randint(2, 9))
 
 
 

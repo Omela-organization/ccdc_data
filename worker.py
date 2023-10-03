@@ -1,3 +1,4 @@
+import random
 import motor
 import schedule
 import time
@@ -22,12 +23,14 @@ async def main():
     # res =  await getArrayOfData([[23 + random.random(), 23 + random.random()] for i in range(2)])
     # res = await getArrayOfData([[ 38.418249300187135,44.78450006793644],[ 35.418249300187135,44.78450006793644], [ 38.418249300187135,44.78460006793644], [ 38.418259300187135,44.78460006793644],[31.39072948258994,26.72065099958095]], TypeFetch.Brightness)
     # print(res)
+    
     try:
         await processQuery()
     except Exception as e:
         print('_____')
         print(e)
         print('_____')
+        time.sleep(random.randint(5, 37))
         myMutex = False
     myMutex = False
 

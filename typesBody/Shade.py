@@ -3400,3 +3400,4 @@ def getBodyShade(x, y):
     }}
   }}
 }}"""
+    return body 

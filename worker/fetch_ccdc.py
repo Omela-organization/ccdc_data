@@ -143,7 +143,6 @@ async def getData(x: float, y: float, authToken: str, session, typeFetch: TypeFe
         body = getBodySWIR2(x, y)
     else:
         raise Exception("Bad type")
-
     headers = {"authorization": "Bearer " + authToken}
 
     async with session.post(CCDC_API_URL, data=body, headers=headers) as resp:

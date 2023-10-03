@@ -3391,3 +3391,4 @@ def getBodySWIR2(x, y):
     }}
   }}
 }}"""
+    return body 
